@@ -221,7 +221,7 @@ class LogStash::Filters::Multiline < LogStash::Filters::Base
       # previous previous line is part of this event. append it to the event and cancel it
       event.tag(MULTILINE_TAG)
       pending << event
-      event.cancel
+     # event.cancel
     else
       # this line is not part of the previous event if we have a pending event, it's done, send it.
       # put the current event into pending
