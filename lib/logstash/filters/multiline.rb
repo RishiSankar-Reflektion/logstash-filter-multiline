@@ -248,7 +248,7 @@ class LogStash::Filters::Multiline < LogStash::Filters::Base
       # this line is part of a multiline event, the next line will be part, too, put it into pending.
       event.tag(MULTILINE_TAG)
       pending << event
-      event.cancel
+#      event.cancel
     else
       # if we have something in pending, join it with this message and send it.
       # otherwise, this is a new message and not part of multiline, send it.
